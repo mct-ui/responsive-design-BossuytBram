@@ -213,6 +213,11 @@ a:focus {
         padding-right: 48px;
     }
 
+    .o-row--md{
+        padding-top: 48px ;
+        padding-bottom: 24px ;
+    }
+
     .o-row--lg {
         padding-top: 72px;
         padding-bottom: 48px;
@@ -350,6 +355,34 @@ a:focus {
 }
 
 /*
+    Objects: section
+    ---
+    Creates vertical whitespace between adjacent sections inside a row
+*/
+
+.o-section {
+    display: flow-root;
+}
+
+.o-section + .o-section {
+    margin-top: 24px;      
+}
+
+@media (min-width: 768px) {
+    .o-section--lg + .o-section--lg,
+    .o-section--xl + .o-section--xl {
+        margin-top: 48px;
+    }
+}
+
+@media (min-width: 1200px) {
+    .o-section--xl + .o-section--xl {
+        margin-top: 72px;
+    }
+}
+
+
+/*
     Objects: List
     ---
     Small reusable object to remove default list styling from lists
@@ -364,6 +397,29 @@ a:focus {
 /*------------------------------------*\
   #COMPONENTS
 \*------------------------------------*/
+
+/*
+    Component: header
+    ---
+    Main header of the website
+*/
+
+.c-header__nav {
+    display: none;
+}
+
+@media (min-width: 992px) {
+    .c-header {
+        display: flex;
+        justify-content: space-between;
+    }
+
+    .c-header__nav {
+        display: block;
+    }
+}
+
+
 /*
     Component: Logo
     ---
@@ -483,6 +539,17 @@ a:focus {
     Utility classes to put specific flex properties onto elements
     Will be mostly used on o-layout__item
 */
+
+/*
+    Utilities: spacing
+    ---
+    Utility classes to put specific margins and paddings onto elements
+*/
+
+.u-pt-clear {
+    padding-top: 0px;
+}
+
 
 .u-flex-basis-auto {
     flex-basis: auto !important;
